@@ -17,5 +17,9 @@ add_executable(${TEST_EXEC_NAME} test/test.cpp)
 target_link_libraries(${TEST_EXEC_NAME} PRIVATE Catch2::Catch2)
 add_test(TEST_ONE ${TEST_EXEC_NAME})
 
+
+###############################################################################
+##  Main code #################################################################
+###############################################################################
 set(MAIN_EXEC_NAME cpp-cli-poc)
 add_executable(${MAIN_EXEC_NAME} src/main.cpp)

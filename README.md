@@ -22,5 +22,5 @@ apt install cmake g++
 A script, `ci-build.sh`, is provided to automate the build process.
 
 ```bash
-./ci-build.sh
+./auto-build.sh
 ```
