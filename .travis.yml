@@ -7,7 +7,7 @@ jobs:
 
         - echo 'Installing build toolchain...' && echo -en 'travis_fold:start:install\\r'
         - sudo apt update
-        - sudo apt install g++ cmake
+        - sudo apt install g++ cmake cppcheck
         - echo -en 'travis_fold:end:install\\r'
 
         - echo 'Lint project' && echo -en 'travis_fold:start:lint\\r'
