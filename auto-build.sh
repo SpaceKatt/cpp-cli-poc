@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 BUILD_DIR="./build"
 declare TEST_STATE
 
@@ -13,6 +15,9 @@ while getopts ":t" opt; do
       ;;
   esac
 done
+
+# lint project
+./lint.sh -e
 
 # nuke build dir
 [ -d $BUILD_DIR ] && rm -rf $BUILD_DIR && echo 'Nuked build dir...' \
