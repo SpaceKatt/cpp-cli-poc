@@ -5,10 +5,6 @@ jobs:
       script:
         - set -e
 
-        - echo 'Sync dependency submodule(s)' && echo -en 'travis_fold:start:install\\r'
-        - git submodule update --init --recursive
-        - echo -en 'travis_fold:end:install\\r'
-
         - echo 'Installing build toolchain...' && echo -en 'travis_fold:start:install\\r'
         - apt install g++ cmake
         - echo -en 'travis_fold:end:install\\r'
