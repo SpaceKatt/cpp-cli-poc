@@ -10,8 +10,8 @@ Proof of concept (POC) for creating a command-line interface with C++.
 
 ### Build Tools
 
-This project uses `cmake` to provide consistent builds.
+This project uses `cmake` and `g++` to provide consistent builds.
 
 ```bash
-apt install cmake
+apt install cmake g++
 ```
