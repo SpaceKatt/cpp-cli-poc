@@ -33,7 +33,7 @@ git clone --recurse-submodules -j8 git@github.com:SpaceKatt/cpp-cli-poc.git
 
 ### Build
 
-A script, `ci-build.sh`, is provided to automate the build process.
+A script, `auto-build.sh`, is provided to automate the build process.
 
 ```bash
 ./auto-build.sh
@@ -41,6 +41,8 @@ A script, `ci-build.sh`, is provided to automate the build process.
 
 ### Test
 
+[`Catch2`](https://github.com/catchorg/Catch2) and `CTTest` are used for testing this project. The aforementioned build script will also build tests if passed the `-t` flag.
+
 ```bash
-./auto-build -t
+./auto-build.sh -t
 ```
