@@ -13,4 +13,4 @@ while getopts ":e" opt; do
   esac
 done
 
-cppcheck --enable=all --suppressions-list=suppressions.txt --inline-suppr --inconclusive  --force --error-exitcode=${EXIT_CODE} -q src/
+cppcheck --enable=all --suppressions-list=suppressions.txt --inline-suppr --inconclusive --force --error-exitcode=${EXIT_CODE} -q src/
