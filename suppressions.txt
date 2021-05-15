@@ -1,0 +1,4 @@
+missingIncludeSystem
+unmatchedSuppression
+*:test/catch.hpp
+shadowFunction:test/
