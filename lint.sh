@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 EXIT_CODE=0
-declare VERBOSITY='-q'
+declare VERBOSITY
 
-while getopts ":e:t:v" opt; do
+while getopts "eqv" opt; do
   case $opt in
     e)
       EXIT_CODE=1
+      ;;
+    q)
+      VERBOSITY="-q"
       ;;
     v)
       VERBOSITY="-v"
