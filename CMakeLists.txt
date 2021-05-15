@@ -3,18 +3,19 @@ cmake_minimum_required(VERSION 3.10)
 # set the project name and version
 project(cpp-cli-poc VERSION 0.1)
 
-set(EXEC_NAME cpp-cli-poc)
-
-###############################################################################
-##  Test code #################################################################
-###############################################################################
-set(CATCH_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include/catch)
-add_library(Catch2::Catch IMPORTED INTERFACE)
-set_property(TARGET Catch2::Catch PROPERTY INTERFACE_INCLUDE_DIRECTORIES "${CATCH_INCLUDE_DIR}")
-###############################################################################
-
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_executable(${EXEC_NAME} src/main.cpp)
+###############################################################################
+##  Test code #################################################################
+###############################################################################
+enable_testing()
+add_subdirectory(include/Catch2)
+set (TEST_EXEC_NAME tests)
+add_executable(${TEST_EXEC_NAME} test/test.cpp)
+target_link_libraries(${TEST_EXEC_NAME} PRIVATE Catch2::Catch2)
+add_test(TEST_ONE ${TEST_EXEC_NAME})
+
+# set(MAIN_EXEC_NAME cpp-cli-poc)
+# add_executable(${MAIN_EXEC_NAME} src/main.cpp)
