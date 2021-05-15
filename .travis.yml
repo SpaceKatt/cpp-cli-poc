@@ -12,7 +12,7 @@ jobs:
         - echo 'Build project' && echo -en 'travis_fold:start:build\\r'
         - mkdir build
         - cd build
-        - cmake -DBUILD_TESTING=${TEST_STATE} ../
+        - cmake -DBUILD_TESTING="ON" ../
         - cmake --build .
         - echo -en 'travis_fold:end:build\\r'
 
