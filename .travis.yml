@@ -6,6 +6,7 @@ jobs:
         - set -e
 
         - echo 'Installing build toolchain...' && echo -en 'travis_fold:start:install\\r'
+        - sudo apt update
         - sudo apt install g++ cmake
         - echo -en 'travis_fold:end:install\\r'
 
