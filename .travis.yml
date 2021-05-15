@@ -10,6 +10,10 @@ jobs:
         - sudo apt install g++ cmake
         - echo -en 'travis_fold:end:install\\r'
 
+        - echo 'Lint project' && echo -en 'travis_fold:start:lint\\r'
+        - ./lint.sh -e
+        - echo -en 'travis_fold:end:lint\\r'
+
         - echo 'Build project' && echo -en 'travis_fold:start:build\\r'
         - mkdir build
         - cd build
