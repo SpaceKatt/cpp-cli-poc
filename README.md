@@ -1,5 +1,7 @@
 # cpp-cli-poc
 
+[![Build Status](https://travis-ci.com/SpaceKatt/cpp-cli-poc.svg?branch=main)](https://travis-ci.com/SpaceKatt/cpp-cli-poc)
+
 Proof of concept (POC) for creating a command-line interface with C++.
 
 - [cpp-cli-poc](#cpp-cli-poc)
