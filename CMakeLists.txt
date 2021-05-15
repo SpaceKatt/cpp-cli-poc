@@ -6,6 +6,12 @@ project(cpp-cli-poc VERSION 0.1)
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+add_compile_options(
+       -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
+       -Wold-style-cast -Wcast-align -Wunused
+)
+
 option(BUILD_TESTING "" OFF)
 
 ###############################################################################
