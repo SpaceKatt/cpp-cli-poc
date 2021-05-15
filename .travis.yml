@@ -11,7 +11,7 @@ jobs:
         - echo -en 'travis_fold:end:install\\r'
 
         - echo 'Lint project' && echo -en 'travis_fold:start:lint\\r'
-        - ./lint.sh -e
+        - cppcheck --enable=all --suppressions-list=suppressions.txt --inline-suppr --inconclusive  --force --error-exitcode=1 -q src/
         - echo -en 'travis_fold:end:lint\\r'
 
         - echo 'Build project' && echo -en 'travis_fold:start:build\\r'
