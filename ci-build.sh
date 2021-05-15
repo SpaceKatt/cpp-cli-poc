@@ -6,6 +6,7 @@ BUILD_DIR="./build"
   || echo 'Building from clean slate...' \
   && echo
 
+# TODO Test flag
 # create build system
 mkdir build
 cd build
