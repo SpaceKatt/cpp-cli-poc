@@ -10,6 +10,7 @@ Proof of concept (POC) for creating a command-line interface with C++.
     - [Dependencies](#dependencies)
     - [Build](#build)
     - [Test](#test)
+    - [Lint](#lint)
 
 ## Development
 
@@ -67,4 +68,16 @@ cmake --build .
 cd build
 cmake --build .
 ctest
+```
+
+### Lint
+
+[`cppcheck`](http://cppcheck.sourceforge.net/) is used for linting the project. A script, `./lint.sh`, is provided for ease of use.
+
+```bash
+# lint project, show warnings, exit 0
+./lint.sh
+
+# lint project, exit in error (1) on warnings
+./lint.sh -e
 ```
