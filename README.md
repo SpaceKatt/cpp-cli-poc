@@ -3,8 +3,15 @@
 Proof of concept (POC) for creating a command-line interface with C++.
 
 - [cpp-cli-poc](#cpp-cli-poc)
-  - [qwerty](#qwerty)
+  - [Development](#development)
+    - [Build Tools](#build-tools)
 
-## qwerty
+## Development
 
-Lorem ipsum
+### Build Tools
+
+This project uses `cmake` to provide consistent builds.
+
+```bash
+apt install cmake
+```
