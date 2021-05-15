@@ -7,6 +7,7 @@ Proof of concept (POC) for creating a command-line interface with C++.
     - [Build Toolchain](#build-toolchain)
     - [Dependencies](#dependencies)
     - [Build](#build)
+    - [Test](#test)
 
 ## Development
 
@@ -36,4 +37,10 @@ A script, `ci-build.sh`, is provided to automate the build process.
 
 ```bash
 ./auto-build.sh
+```
+
+### Test
+
+```bash
+./auto-build -t
 ```
