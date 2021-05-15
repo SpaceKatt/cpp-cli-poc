@@ -29,7 +29,7 @@ This project uses [`Catch2`](https://github.com/catchorg/Catch2) and includes it
 # If you have already cloned the repo...
 git submodule update --init --recursive
 
-#If you have yet to clone this repo (and clone using SSH)...
+# If you have yet to clone this repo (and clone using SSH)...
 git clone --recurse-submodules -j8 git@github.com:SpaceKatt/cpp-cli-poc.git
 ```
 
@@ -40,7 +40,11 @@ A script, `auto-build.sh`, is provided to automate the build process.
 ```bash
 # clean build, generate build system
 ./auto-build.sh
+```
 
+> One may also save time by reusing the build system generated in `build/`, instead of running the whole `auto-build.sh` script everytime.
+
+```bash
 # reuse compiled libs and build system
 cd build
 cmake --build .
@@ -53,7 +57,11 @@ cmake --build .
 ```bash
 # run tests, after clean build and generating build system
 ./auto-build.sh -t
+```
 
+> One may also save time by reusing the build system generated in `build/`, instead of running the whole `auto-build.sh` script everytime.
+
+```bash
 # compile and run tests and reuse compiled libs and build system
 cd build
 cmake --build .
