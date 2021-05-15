@@ -15,10 +15,11 @@ Proof of concept (POC) for creating a command-line interface with C++.
 
 ### Build Toolchain
 
-This project uses `cmake` and `g++` to provide consistent builds.
+This project uses `cmake`, `cppcheck`, and `g++` to provide consistent builds.
 
 ```bash
-apt install cmake g++
+apt update
+apt install cmake g++ cppcheck
 ```
 
 ### Dependencies
@@ -52,7 +53,7 @@ cmake --build .
 
 ### Test
 
-[`Catch2`](https://github.com/catchorg/Catch2) and `CTTest` are used for testing this project. The aforementioned build script will also build tests if passed the `-t` flag.
+[`Catch2`](https://github.com/catchorg/Catch2) and `CTest` are used for testing this project. The aforementioned build script will also build tests if passed the `-t` flag.
 
 ```bash
 # run tests, after clean build and generating build system
