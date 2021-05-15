@@ -1,0 +1,25 @@
+jobs:
+  include:
+    - stage: CMake build and CTest
+      language: minimal
+      script:
+        - set -e
+
+        - echo 'Sync dependency submodule(s)' && echo -en 'travis_fold:start:install\\r'
+        - git submodule update --init --recursive
+        - echo -en 'travis_fold:end:install\\r'
+
+        - echo 'Installing build toolchain...' && echo -en 'travis_fold:start:install\\r'
+        - apt install g++ cmake
+        - echo -en 'travis_fold:end:install\\r'
+
+        - echo 'Build project' && echo -en 'travis_fold:start:build\\r'
+        - mkdir build
+        - cd build
+        - cmake -DBUILD_TESTING=${TEST_STATE} ../
+        - cmake --build .
+        - echo -en 'travis_fold:end:build\\r'
+
+        - echo 'Test project' && echo -en 'travis_fold:start:test\\r'
+        - ctest
+        - echo -en 'travis_fold:end:test\\r'
