@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 # set the project name and version
 project(cpp-cli-poc VERSION 0.1)
-# include(CTest)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -13,6 +12,7 @@ option(BUILD_TESTING "" OFF)
 ##  Test code #################################################################
 ###############################################################################
 if (BUILD_TESTING)
+  include(CTest)
   enable_testing()
   add_subdirectory(include/Catch2)
   set (TEST_EXEC_NAME tests)
