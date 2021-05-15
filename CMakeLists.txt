@@ -7,14 +7,6 @@ project(cpp-cli-poc VERSION 0.1)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_compile_options(
-       -Werror
-       -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
-       -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual
-       -Wpedantic -Wconversion -Wsign-conversion -Wlogical-op
-       -Wuseless-cast -Wdouble-promotion -Wformat=2
-)
-
 option(BUILD_TESTING "" OFF)
 
 ###############################################################################
@@ -30,6 +22,13 @@ if (BUILD_TESTING)
   add_test(TEST_ONE ${TEST_EXEC_NAME})
 endif()
 
+add_compile_options(
+       -Werror
+       -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
+       -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual
+       -Wpedantic -Wconversion -Wsign-conversion -Wlogical-op
+       -Wuseless-cast -Wdouble-promotion -Wformat=2
+)
 
 ###############################################################################
 ##  Main code #################################################################
