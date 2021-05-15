@@ -14,3 +14,6 @@ cmake ../
 
 # execute build
 cmake --build .
+
+# run tests
+ctest
