@@ -11,8 +11,7 @@ add_compile_options(
        -Werror
        -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
        -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual
-       -Wpedantic -Wconversion -Wsign-conversion -Wmisleading-indentation
-       -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference
+       -Wpedantic -Wconversion -Wsign-conversion -Wlogical-op
        -Wuseless-cast -Wdouble-promotion -Wformat=2
 )
 
