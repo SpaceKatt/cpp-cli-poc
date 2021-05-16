@@ -16,5 +16,7 @@ while getopts ":t" opt; do
   esac
 done
 
+./lint.sh -eq
+
 cd $BUILD_DIR
 cmake --build .

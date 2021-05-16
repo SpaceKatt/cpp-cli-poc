@@ -17,7 +17,7 @@ while getopts ":t" opt; do
 done
 
 # lint project
-./lint.sh -e
+./lint.sh -eq
 
 # nuke build dir
 [ -d $BUILD_DIR ] && rm -rf $BUILD_DIR && echo 'Nuked build dir...' \
