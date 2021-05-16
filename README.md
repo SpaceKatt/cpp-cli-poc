@@ -41,15 +41,14 @@ A script, `auto-build.sh`, is provided to automate the build process.
 
 ```bash
 # clean build, generate build system
-./auto-build.sh
+./clean-build.sh
 ```
 
 > One may also save time by reusing the build system generated in `build/`, instead of running the whole `auto-build.sh` script everytime.
 
 ```bash
 # reuse compiled libs and build system
-cd build
-cmake --build .
+./recycle-build.sh
 ```
 
 ### Test
@@ -58,17 +57,17 @@ cmake --build .
 
 ```bash
 # run tests, after clean build and generating build system
-./auto-build.sh -t
+./clean-build.sh -t
 ```
 
 > One may also save time by reusing the build system generated in `build/`, instead of running the whole `auto-build.sh` script everytime.
 
 ```bash
 # compile and run tests and reuse compiled libs and build system
-cd build
-cmake --build .
-ctest
+./recycle-build.sh -t
 ```
+
+> NOTE: `./recycle-build.sh -t` will fail if `./clean-build.sh` is first called without the `-t` flag.
 
 ### Lint
 
