@@ -23,6 +23,14 @@ if (BUILD_TESTING)
   add_test(TEST_ONE ${TEST_EXEC_NAME})
 endif()
 
+
+###############################################################################
+##  Main code #################################################################
+###############################################################################
+set(MAIN_EXEC_NAME cpp-cli-poc)
+
+include_directories(SYSTEM include/tclap-1.2.4/include)
+
 add_compile_options(
        -Werror
        -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic
@@ -30,10 +38,5 @@ add_compile_options(
        -Wpedantic -Wconversion -Wsign-conversion -Wlogical-op
        -Wuseless-cast -Wdouble-promotion -Wformat=2
 )
-
-###############################################################################
-##  Main code #################################################################
-###############################################################################
-set(MAIN_EXEC_NAME cpp-cli-poc)
 
 add_executable(${MAIN_EXEC_NAME} src/main.cpp)
