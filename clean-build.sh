@@ -25,8 +25,8 @@ done
   && echo
 
 # create build system
-mkdir build
-cd build
+mkdir $BUILD_DIR
+cd $BUILD_DIR
 cmake -DBUILD_TESTING=${TEST_STATE} ../
 
 # execute build
