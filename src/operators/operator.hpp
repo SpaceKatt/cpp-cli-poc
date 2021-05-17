@@ -13,11 +13,11 @@ std::vector<OperatorType> allOperatorTypes = {
     ADD,
     SUBTRACT
 };
-std::map<OperatorType, const char*> operatorTypeToNameMap = {
+std::map<OperatorType, std::string> operatorTypeToNameMap = {
     {ADD, "add"},
     {SUBTRACT, "subtract"},
 };
-std::map<const char*, OperatorType> nameToOperatorTypeMap = {
+std::map<std::string, OperatorType> nameToOperatorTypeMap = {
     {"add", ADD},
     {"subtract", SUBTRACT},
 };
@@ -33,11 +33,12 @@ class Operator {
 };
 
 #include "add.hpp"
+#include "subtract.hpp"
 
 std::vector<std::string> Operator::getOperatorNames() {
     std::vector<std::string> vec = {};
     for (std::map<
-        const char*,
+        std::string,
         OperatorType
       >::iterator it = nameToOperatorTypeMap.begin();
       it != nameToOperatorTypeMap.end();
@@ -52,13 +53,12 @@ Operator::~Operator() {}
 Operator* Operator::create(OperatorType type) {
     switch (type) {
     case OperatorType::ADD:
-        break;
+        return new Add();
     case OperatorType::SUBTRACT:
-        break;
+        return new Subtract();
     default:
         return NULL;
     }
-    return new Add();
 }
 
 #endif  // SRC_OPERATORS_OPERATOR_HPP_
