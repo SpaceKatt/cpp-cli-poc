@@ -1,5 +1,6 @@
 // Copyright 2021 Thomas Kercehval
 #include <tclap/CmdLine.h>
+#include <string>
 #include "operators/operator.hpp"
 
 int main(int argc, char** argv) {
@@ -21,7 +22,11 @@ int main(int argc, char** argv) {
 
         cmd.parse(argc, argv);
 
-        std::string op = operatorArg.getValue();
+        std::string opName = operatorArg.getValue();
+        auto operatorType = nameToOperatorTypeMap.find(opName)->second;
+        Operator* op = Operator::create(operatorType);
+
+        op->compute();
 
         return 0;
     } catch (TCLAP::ArgException &e) {
