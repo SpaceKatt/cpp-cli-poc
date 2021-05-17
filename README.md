@@ -16,11 +16,12 @@ Proof of concept (POC) for creating a command-line interface with C++.
 
 ### Build Toolchain
 
-This project uses `cmake`, `cppcheck`, and `g++` to provide consistent builds.
+This project uses `cmake`, `cppcheck`, `cpplint`, and `g++` to provide consistent builds.
 
 ```bash
-apt update
-apt install cmake g++ cppcheck
+sudo apt update
+sudo apt install cmake g++ cppcheck
+sudo python -m pip install cpplint
 ```
 
 ### Dependencies
