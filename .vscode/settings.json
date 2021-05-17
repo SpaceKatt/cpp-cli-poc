@@ -3,5 +3,6 @@
         "*.json": "jsonc",
         "*.ino": "cpp",
         "iostream": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": true
 }
