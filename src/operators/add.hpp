@@ -7,7 +7,7 @@ class Add;
 
 class Add: public Operator {
     ~Add() {}
-    void compute();
+    void compute() override;
 };
 
 void Add::compute() {}
