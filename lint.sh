@@ -21,4 +21,4 @@ while getopts "eqv" opt; do
 done
 
 cppcheck --enable=all --suppressions-list=suppressions.txt --inline-suppr --inconclusive --force --error-exitcode=${EXIT_CODE} ${VERBOSITY} src/
-cpplint --recursive ./src && cpplint --recursive ./test
+cpplint --quiet --recursive ./src && cpplint --quiet --recursive ./test
