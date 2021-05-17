@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 EXIT_CODE=0
 declare VERBOSITY
 

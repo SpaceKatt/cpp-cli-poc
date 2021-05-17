@@ -28,6 +28,8 @@ int main(int argc, char** argv) {
 
         op->compute();
 
+        delete op;
+
         return 0;
     } catch (TCLAP::ArgException &e) {
         std::cerr << "error: " << e.error()
