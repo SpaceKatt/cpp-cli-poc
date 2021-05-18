@@ -11,19 +11,25 @@ int main(int argc, char** argv) {
         TCLAP::SwitchArg addArg(
             "a",
             "add",
-            "adds numbers together, a + b + ... + n\n",
+            "finds the sum of a series, a + b + ... + n\n",
             false,
             NULL);
 
         TCLAP::SwitchArg subtractArg(
             "s",
             "subtract",
-            "subtracts two numbers, a - b - ... - n",
+            "subtracts a series of numbers, a - b - ... - n",
+            false,
+            NULL);
+        TCLAP::SwitchArg multiplyArg(
+            "m",
+            "multiply",
+            "multiplies a series of numbers, a * b * ... * n",
             false,
             NULL);
 
         TCLAP::OneOf xorArgs;
-        xorArgs.add(addArg).add(subtractArg);
+        xorArgs.add(addArg).add(subtractArg).add(multiplyArg);
         cmd.add(xorArgs);
 
         TCLAP::UnlabeledMultiArg<float> numsArg(

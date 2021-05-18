@@ -8,18 +8,22 @@
 enum OperatorType {
     ADD,
     SUBTRACT,
+    MULTIPLY,
 };
 std::vector<OperatorType> allOperatorTypes = {
     ADD,
-    SUBTRACT
+    SUBTRACT,
+    MULTIPLY
 };
 std::map<OperatorType, std::string> operatorTypeToNameMap = {
     {ADD, "add"},
     {SUBTRACT, "subtract"},
+    {MULTIPLY, "multiply"},
 };
 std::map<std::string, OperatorType> nameToOperatorTypeMap = {
     {"add", ADD},
     {"subtract", SUBTRACT},
+    {"multiply", MULTIPLY},
 };
 
 class Operator;
@@ -34,6 +38,7 @@ class Operator {
 
 #include "add.hpp"
 #include "subtract.hpp"
+#include "multiply.hpp"
 
 std::vector<std::string> Operator::getOperatorNames() {
     std::vector<std::string> vec = {};
@@ -56,6 +61,8 @@ Operator* Operator::create(OperatorType type) {
         return new Add();
     case OperatorType::SUBTRACT:
         return new Subtract();
+    case OperatorType::MULTIPLY:
+        return new Multiply();
     default:
         return NULL;
     }
