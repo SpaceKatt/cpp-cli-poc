@@ -26,7 +26,7 @@ class Operator;
 class Operator {
  public:
     virtual ~Operator() = 0;
-    virtual void compute() = 0;
+    virtual void compute(const std::vector<float> &) = 0;
 
     static std::vector<std::string> getOperatorNames();
     static Operator* create(OperatorType type);
