@@ -9,6 +9,7 @@ Proof of concept (POC) for creating a command-line interface with C++.
     - [Build Toolchain](#build-toolchain)
     - [Dependencies](#dependencies)
     - [Build](#build)
+    - [Install](#install)
     - [Test](#test)
     - [Lint](#lint)
 
@@ -50,6 +51,15 @@ A script, `auto-build.sh`, is provided to automate the build process.
 ```bash
 # reuse compiled libs and build system
 ./recycle-build.sh
+```
+
+### Install
+
+Once the CLI builds, we may also install it using the `install.sh` script.
+
+```bash
+# install CLI for global bash use (requires sudo)
+./install.sh
 ```
 
 ### Test

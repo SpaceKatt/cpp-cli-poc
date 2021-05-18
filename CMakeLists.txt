@@ -38,3 +38,4 @@ set(MAIN_EXEC_NAME cpp-cli-poc)
 include_directories(SYSTEM include/tclap-1.4.0-rc1/include)
 
 add_executable(${MAIN_EXEC_NAME} src/main.cpp)
+install(TARGETS ${MAIN_EXEC_NAME} DESTINATION bin)
