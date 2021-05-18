@@ -5,7 +5,8 @@
 
 int main(int argc, char** argv) {
     try {
-        TCLAP::CmdLine cmd("Command description message");
+        // NOLINTNEXTLINE
+        TCLAP::CmdLine cmd("Simple proof of concept to demonstrate a command-line interface in C++.");
 
         // std::vector<std::string> operators = Operator::getOperatorNames();
         TCLAP::SwitchArg addArg(

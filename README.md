@@ -5,6 +5,9 @@
 Proof of concept (POC) for creating a command-line interface with C++.
 
 - [cpp-cli-poc](#cpp-cli-poc)
+  - [Using the Command-line Interface](#using-the-command-line-interface)
+    - [Help Dump](#help-dump)
+    - [Usage Examples](#usage-examples)
   - [Development](#development)
     - [Build Toolchain](#build-toolchain)
     - [Dependencies](#dependencies)
@@ -12,6 +15,74 @@ Proof of concept (POC) for creating a command-line interface with C++.
     - [Install](#install)
     - [Test](#test)
     - [Lint](#lint)
+
+## Using the Command-line Interface
+
+This section provides examples for how to use the CLI (after you [install](#install) it).
+
+### Help Dump
+
+Yarr be the help message.
+
+```bash
+$ cpp-cli-poc --help
+
+USAGE:
+
+   cpp-cli-poc  [-h] [--version] {-a|-m|-s} arguments ...
+
+
+Where:
+
+   One of:
+      -a,  --add
+        finds the sum of a series, a + b + ... + n
+
+      -s,  --subtract
+        subtracts a series of numbers, a - b - ... - n
+
+      -m,  --multiply
+        multiplies a series of numbers, a * b * ... * n
+
+   --,  --ignore_rest
+     Ignores the rest of the labeled arguments following this flag.
+
+   --version
+     Displays version information and exits.
+
+   -h,  --help
+     Displays usage information and exits.
+
+   arguments (accepted multiple times) <args>
+     (required) Numbers to operate upon.
+
+   Simple proof of concept to demonstrate a command-line interface in C++.
+```
+
+### Usage Examples
+
+One may add numbers...
+
+```bash
+$ cpp-cli-poc --add 1 2 3 4
+10
+```
+
+Subtract a series of numbers from an initial value...
+
+```bash
+$ cpp-cli-poc --subtract 10 4
+6
+$ cpp-cli-poc --subtract 10 4 3
+3
+```
+
+Or, multiply a series of numbers...
+
+```bash
+$ cpp-cli-poc --multiply 1 2 3 4 5
+120
+```
 
 ## Development
 
