@@ -2,8 +2,8 @@
 #ifndef SRC_OPERATORS_OPERATOR_HPP_
 #define SRC_OPERATORS_OPERATOR_HPP_
 #include <map>
-#include <vector>
 #include <string>
+#include <vector>
 
 enum OperatorType {
     ADD,
@@ -30,7 +30,7 @@ class Operator;
 class Operator {
  public:
     virtual ~Operator() = 0;
-    virtual void compute(const std::vector<float> &) = 0;
+    virtual float compute(const std::vector<float> &) = 0;
 
     static std::vector<std::string> getOperatorNames();
     static Operator* create(OperatorType type);

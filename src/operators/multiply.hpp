@@ -9,15 +9,15 @@ class Multiply;
 
 class Multiply: public Operator {
     ~Multiply() {}
-    void compute(const std::vector<float> &) override;
+    float compute(const std::vector<float> &) override;
 };
 
-void Multiply::compute(const std::vector<float> &args) {
+float Multiply::compute(const std::vector<float> &args) {
     float total = args[0];
     for (std::vector<float>::size_type i = 1; i < args.size(); ++i) {
         total *= args[i];
     }
-    std::cout << total << std::endl;
+    return total;
 }
 
 #endif  // SRC_OPERATORS_MULTIPLY_HPP_

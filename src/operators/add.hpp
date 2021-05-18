@@ -9,15 +9,15 @@ class Add;
 
 class Add: public Operator {
     ~Add() {}
-    void compute(const std::vector<float> &) override;
+    float compute(const std::vector<float> &) override;
 };
 
-void Add::compute(const std::vector<float> &args) {
+float Add::compute(const std::vector<float> &args) {
     float total = args[0];
     for (std::vector<float>::size_type i = 1; i < args.size(); ++i) {
         total += args[i];
     }
-    std::cout << total << std::endl;
+    return total;
 }
 
 #endif  // SRC_OPERATORS_ADD_HPP_
