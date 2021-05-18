@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
                 auto operatorType = nameToOperatorTypeMap.find(opName)->second;
                 Operator* op = Operator::create(operatorType);
 
-                op->compute(args);
+                std::cout << op->compute(args) << std::endl;
                 delete op;
                 break;
             }
