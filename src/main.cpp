@@ -8,38 +8,44 @@ int main(int argc, char** argv) {
         TCLAP::CmdLine cmd("Command description message");
 
         // std::vector<std::string> operators = Operator::getOperatorNames();
-        TCLAP::ValueArg<std::string> addArg(
+        TCLAP::SwitchArg addArg(
             "a",
             "add",
             "adds numbers together, a + b + ... + n\n",
             false,
-            "add",
-            "add");
+            NULL);
 
-        TCLAP::ValueArg<std::string> subtractArg(
+        TCLAP::SwitchArg subtractArg(
             "s",
             "subtract",
             "subtracts two numbers, a - b - ... - n",
             false,
-            "subtract",
-            "subtract");
+            NULL);
 
         TCLAP::OneOf xorArgs;
         xorArgs.add(addArg).add(subtractArg);
         cmd.add(xorArgs);
 
+        TCLAP::UnlabeledMultiArg<float> numsArg(
+            "arguments",
+            "Numbers to operate upon.",
+            true,
+            "args");
+
+        cmd.add(numsArg);
+
         cmd.parse(argc, argv);
 
+        std::vector<float> args = numsArg.getValue();
         // find active command and process it
         for (auto& arg : xorArgs) {
             if (arg->isSet()) {
-                std::string opName  = static_cast<
-                    TCLAP::ValueArg<std::string>*
-                >(arg)->getValue();
+                TCLAP::SwitchArg* opArg = static_cast<TCLAP::SwitchArg*>(arg);
+                std::string opName = opArg->getName();
                 auto operatorType = nameToOperatorTypeMap.find(opName)->second;
                 Operator* op = Operator::create(operatorType);
 
-                op->compute();
+                op->compute(args);
                 delete op;
                 break;
             }
